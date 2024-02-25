@@ -2,7 +2,6 @@ import {
   ADD_TO_CART,
   ADD_TO_CART_ASYNC,
   ADD_TO_FAVORITES,
-  CLEAR_TO_CART,
   DECREASE_QUANTITY,
   INCREASE_QUANTITY,
   REMOVE_FROM_CART,
@@ -32,4 +31,10 @@ export const addToFavorites = (product) => ({
   type: ADD_TO_FAVORITES,
   payload: product,
 });
+export const removeFromCart = (id) => {
+  return {
+    type: REMOVE_FROM_CART,
+    payload: id,
+  };
+};
 

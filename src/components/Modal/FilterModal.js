@@ -5,14 +5,14 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Text } from "react-native-ui-lib";
 import DynamicFormBuilder from "../DynamicForm/DynamicFormBuilder";
 import { Formik } from "formik";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const FilterModal = ({ visible, onClose, brands, models,onSubmitFilters }) => {
+const FilterModal = ({ visible, onClose, brands, models, onSubmitFilters }) => {
   const formSchema = [
     {
       key: "sortBy",
@@ -25,7 +25,7 @@ const FilterModal = ({ visible, onClose, brands, models,onSubmitFilters }) => {
           { label: "Price high to low", value: "priceHighToLow" },
           { label: "Price low to high", value: "priceLowToHigh" },
         ],
-      }
+      },
     },
     {
       key: "brand",
@@ -44,39 +44,39 @@ const FilterModal = ({ visible, onClose, brands, models,onSubmitFilters }) => {
       },
     },
   ];
-    const initialValues = {
-      brand: [],
-      models: []
-    };
-    const [formValues, setFormValues] = useState(initialValues);
+  const initialValues = {
+    brand: [],
+    models: [],
+  };
+  const [formValues, setFormValues] = useState(initialValues);
 
-    const handleSubmit = (values) => {
-      setFormValues(values)
-      onSubmitFilters(values);
-      AsyncStorage.setItem("filterValues", JSON.stringify(values));
-      onClose();
-    };
-    
-    useEffect(() => {
-      const loadFilterValues = async () => {
-        const savedValues = await AsyncStorage.getItem("filterValues");
-        if (savedValues) {
-          setFormValues(JSON.parse(savedValues));
-        }
-      };
-    
-      if (visible) {
-        loadFilterValues();
+  const handleSubmit = (values) => {
+    setFormValues(values);
+    onSubmitFilters(values);
+    AsyncStorage.setItem("filterValues", JSON.stringify(values));
+    onClose();
+  };
+
+  useEffect(() => {
+    const loadFilterValues = async () => {
+      const savedValues = await AsyncStorage.getItem("filterValues");
+      if (savedValues) {
+        setFormValues(JSON.parse(savedValues));
       }
-    }, [visible]);;
-
-    const clearFilters = async () => {
-      setFormValues(initialValues);
-      onSubmitFilters(initialValues);
-      await AsyncStorage.removeItem("filterValues");
-      onClose();
     };
-    
+
+    if (visible) {
+      loadFilterValues();
+    }
+  }, [visible]);
+
+  const clearFilters = async () => {
+    setFormValues(initialValues);
+    onSubmitFilters(initialValues);
+    await AsyncStorage.removeItem("filterValues");
+    onClose();
+  };
+
   return (
     <Modal
       animationType="slide"
@@ -92,25 +92,26 @@ const FilterModal = ({ visible, onClose, brands, models,onSubmitFilters }) => {
             </TouchableOpacity>
 
             <Text style={styles.headerTitle}>Filter</Text>
-            <TouchableOpacity onPress={clearFilters}  >
-
-            <Text style={{fontSize:24,color:'red'}}>Clear</Text>
+            <TouchableOpacity onPress={clearFilters}>
+              <Text style={{ fontSize: 24, color: "red" }}>Clear</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.formContainer}>
-
-          <Formik initialValues={formValues} onSubmit={handleSubmit} enableReinitialize >
-            {({ handleSubmit }) => (
-<>
-                <DynamicFormBuilder
-                formSchema={formSchema}
-                onSubmit={handleSubmit}
-                />
+            <Formik
+              initialValues={formValues}
+              onSubmit={handleSubmit}
+              enableReinitialize
+            >
+              {({ handleSubmit }) => (
+                <>
+                  <DynamicFormBuilder
+                    formSchema={formSchema}
+                    onSubmit={handleSubmit}
+                  />
                 </>
-
               )}
-              </Formik>
-              </View>
+            </Formik>
+          </View>
         </View>
       </ScrollView>
     </Modal>
@@ -133,7 +134,6 @@ const styles = StyleSheet.create({
   modalView: {
     flex: 1,
     backgroundColor: "white",
-  
   },
   headerContainer: {
     flexDirection: "row",
@@ -152,14 +152,13 @@ const styles = StyleSheet.create({
     elevation: 5,
     backgroundColor: "white",
     marginVertical: 24,
-    
   },
   headerTitle: {
     fontSize: 24,
     fontWeight: "400",
     color: "black",
   },
-  formContainer:{
-    padding:18
-  }
+  formContainer: {
+    padding: 18,
+  },
 });

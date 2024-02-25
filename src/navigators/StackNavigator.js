@@ -4,6 +4,8 @@ import BottomBarNavigator from "./BottomBarNavigator";
 import ProductsDetail from "../screens/Products/ProductsDetail";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "../components/Header/Header";
+
+
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
 

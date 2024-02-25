@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import React, { useEffect, useState } from "react";
 import CustomCardComponent from "../components/Card/CustomCardComponent";
 import {
@@ -25,7 +25,6 @@ const HomeScreen = () => {
   const [clicked, setClicked] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
-  const [basketToProducts, setBasketToProducts] = useState([]);
 
   const openFilterModal = () => {
     setShowFilterModal(true);

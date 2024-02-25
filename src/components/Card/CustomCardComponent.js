@@ -15,15 +15,15 @@ import { useSelector } from "react-redux";
 const screenWidth = Dimensions.get("window").width;
 const cardWidth = screenWidth / 4 - 10;
 const cardHeight = cardWidth * 1.9;
+
+
 const CustomCardComponent = ({
   data,
   onPress,
-  style,
-  isDescription = false,
   onPressButton,
   addToFavori,
   customStyle = {},}) => {
-  const { name, image, price, description } = data;
+  const { name, image, price } = data;
  
   const favorites = useSelector((state) => state.favorites.favoriCartItems);
   const isFavorite = favorites.some((item) => item.id === data.id);

@@ -1,5 +1,5 @@
 import { takeLatest, put,select } from 'redux-saga/effects';
-import { ADD_TO_CART_ASYNC, ADD_TO_CART ,CLEAR_TO_CART,REMOVE_FROM_CART} from '../actions/types';
+import { ADD_TO_CART_ASYNC, ADD_TO_CART} from '../actions/types';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function* addToCartSaga(action) {

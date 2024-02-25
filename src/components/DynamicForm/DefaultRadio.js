@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, RadioButton, RadioGroup } from "react-native-ui-lib";
+import { View,  RadioButton, RadioGroup } from "react-native-ui-lib";
 import { useFormikContext } from "formik";
 import { StyleSheet } from "react-native";
 

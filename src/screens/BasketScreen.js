@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   increaseQuantity,
   decreaseQuantity,
+  removeFromCart
 } from "../store/actions/cardActions";
 import CustomButtonComponent from "../components/CustomButtonComponent";
 import { AntDesign } from "@expo/vector-icons";
@@ -28,7 +29,9 @@ const BasketScreen = () => {
   const handleDecreaseQuantity = (id) => {
     dispatch(decreaseQuantity(id));
   };
-
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -40,7 +43,7 @@ const BasketScreen = () => {
                 <Text style={styles.itemPrice}>{`${item.price} ₺`}</Text>
               </View>
               <View style={styles.quantityContainer}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => handleRemoveFromCart(item.id)}>
                   <AntDesign name="delete" size={24} color="red" />
                 </TouchableOpacity>
                 <TouchableOpacity
@@ -64,11 +67,11 @@ const BasketScreen = () => {
             </View>
           ))
         ) : (
-          <Text style={styles.emptyMessage}>Sepetiniz Boş</Text>
+          <Text style={styles.emptyMessage}> BASKET IS EMPTY</Text>
         )}
         <View style={styles.totalContainer}>
           <View style={{ flexDirection: "column" }}>
-            <Text style={{ color: "#2A59FE", fontSize: 18 }}>Total:</Text>
+            <Text style={styles.totalText}>Total:</Text>
             <Text style={styles.totalText}>{`${totalPrice} ₺`}</Text>
           </View>
           <CustomButtonComponent label={"Complete"} />
@@ -131,4 +134,7 @@ const styles = StyleSheet.create({
     color: "#000",
   },
   quantityText: { backgroundColor: "#2A59FE", padding: 8 },
+  totalText:{
+    color: "#2A59FE", fontSize: 18
+  }
 });
