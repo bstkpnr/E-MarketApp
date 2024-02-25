@@ -3,28 +3,35 @@
 ## Bu proje, bir e-ticaret uygulamasının temel fonksiyonlarını içeren bir React Native uygulamasıdır. Kullanıcılar ürünleri listeleyebilir, sepete ve favorilere ekleyebilir.
 
 ## Özellikler
- ### Ürünleri listeleme
- ### Ürün detayları görüntüleyebilme
- ### Ürünleri sepete ekleme
- ### Ürünleri favorilere ekleme
- ### Ürünleri marka, model, tarih, fiyat bazında filtreleyebilme
+<ul style="list-style-type:disc">
+
+  <li>Ürünleri listeleme</li>
+ <li>Ürün detayları görüntüleyebilme</li> 
+<li>Ürünleri sepete ekleme</li> 
+ <li>Ürünleri favorilere ekleme</li> 
+<li>Ürünleri marka, model, tarih, fiyat bazında filtreleyebilme</li> 
+ </ul>
 
 
 ## Kullanıln Teknolojiler
-### React Native
-### Redux
-### Formik
-### AsyncStorage
-### React Navigation
-### RNUILib
-### axios
-
+<ul style="list-style-type:disc">
+ <li>React Native</li>
+ <li>Redux</li>
+ <li>Formik</li>
+ <li>AsyncStorage</li>
+ <li>React Navigation</li>
+ <li>RNUILib</li>
+ <li>axios</li>
+</ul>
 
 ## Kurulum 
-### Bu proje Expo ile oluşturulmuştur.
-### git clone https://github.com/bstkpnr/E-MarketApp
-### npm install veya yarn install
-### expo start
+<ul>
+ <li>Bu proje Expo ile oluşturulmuştur.</li>
+ <li>git clone https://github.com/bstkpnr/E-MarketApp</li>
+ <li>npm install veya yarn install</li>
+ <li>expo start</li>
+</ul>
+
 
 
 
