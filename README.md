@@ -1,19 +1,19 @@
-# E-MarketApp React Native Uygulaması
+# E-MarketApp React Native Application
 
-## Bu proje, bir e-ticaret uygulamasının temel fonksiyonlarını içeren bir React Native uygulamasıdır. Kullanıcılar ürünleri listeleyebilir, sepete ve favorilere ekleyebilir.
+## This project is a React Native application that includes the basic functions of an e-commerce application. Users can list products, add them to cart and favorites.
 
-## Özellikler
+## Features
 <ul style="list-style-type:disc">
 
-  <li>Ürünleri listeleme</li>
- <li>Ürün detayları görüntüleyebilme</li> 
-<li>Ürünleri sepete ekleme</li> 
- <li>Ürünleri favorilere ekleme</li> 
-<li>Ürünleri marka, model, tarih, fiyat bazında filtreleyebilme</li> 
+  <li>Listing products</li>
+ <li>Viewing product details</li> 
+<li>Adding products to cart</li> 
+ <li>Adding products to favorites</li> 
+<li>Filtering products by brand, model, date, and price</li> 
  </ul>
 
 
-## Kullanıln Teknolojiler
+## Technologies Used
 <ul style="list-style-type:disc">
  <li>React Native</li>
  <li>Redux</li>
@@ -24,15 +24,26 @@
  <li>axios</li>
 </ul>
 
-## Kurulum 
+## Installation 
 <ul>
- <li>Bu proje Expo ile oluşturulmuştur.</li>
+ <li>This project was created with Expo..</li>
  <li>git clone https://github.com/bstkpnr/E-MarketApp</li>
- <li>npm install veya yarn install</li>
+ <li>npm install or yarn install</li>
  <li>expo start</li>
 </ul>
 
+### 👋
+<div class="d-flex align-items-center justify-content-center" style="height: 250px;">
+<img src="./assets/img/img1.png" width='200px'>
+<img src="./assets/img/img2.png" width='200px'>
+<img src="./assets/img/img3.png" width='200px'>
+<img src="./assets/img/img4.png" width='200px'>
+<img src="./assets/img/img5.png" width='200px'>
+<img src="./assets/img/img6.png" width='200px'>
+<img src="./assets/img/img7.png" width='200px'>
+<img src="./assets/img/img8.png" width='200px'>
 
+</div>
 
 
 
