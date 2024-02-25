@@ -72,7 +72,7 @@ const BasketScreen = () => {
         <View style={styles.totalContainer}>
           <View style={{ flexDirection: "column" }}>
             <Text style={styles.totalText}>Total:</Text>
-            <Text style={styles.totalText}>{`${totalPrice} ₺`}</Text>
+            <Text style={[styles.totalText,{color:'black'}]}>{`${totalPrice} ₺`}</Text>
           </View>
           <CustomButtonComponent label={"Complete"} />
         </View>
